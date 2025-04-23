@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #3498db;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+  </style>
+</head>
+<body class="bg-gray-900 text-white pt-20">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-gray-800 shadow-lg z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+      <div class="flex items-center space-x-3">
+        <img src="assets/images/keyLogo.jpg" alt="Logo" class="h-8 w-8 rounded-full object-cover" />
+        <span class="text-xl font-semibold">Key Cabinet Registration</span>
+      </div>
+      <button onclick="window.location.href='index.html'" class="bg-gray-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg">
+        <i class="fa-solid fa-right-from-bracket text-white-100"></i> Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+
+    <!-- Faculty Registration -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg mt-4">
+      <h2 class="text-2xl font-bold mb-4 text-center">Faculty Registration</h2>
+      <form id="facultyForm" class="space-y-4">
+        <!-- Role Type -->
+        <div>
+            <label class="block mb-1 text-sm font-medium">Role Type</label>
+            <select id="roleSelect" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring focus:ring-gray-500">
+            <option value="" selected disabled>Select role</option>
+            <option>Faculty</option>
+            <option>Technician</option>
+            </select>
+        </div>
+
+        <div>
+          <label class="block mb-1 text-sm font-medium">Faculty ID</label>
+          <input type="text" id="facultyId" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring focus:ring-gray-500" placeholder="FAC-0001">
+        </div>
+
+       <!-- RFID UID -->
+        <div>
+            <label class="block mb-1 text-sm font-medium">RFID UID</label>
+            <input type="text" id="rfidInput" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring focus:ring-gray-500" placeholder="Scan RFID" readonly>
+        </div>
+        
+        <!-- PIN Code (Initially hidden) -->
+        <div id="pinCodeContainer" class="hidden">
+            <label class="block mb-1 text-sm font-medium">PIN Code</label>
+            <input type="password" id="pinCode" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring focus:ring-gray-500" placeholder="6-digit PIN">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 text-sm font-medium">First Name</label>
+            <input type="text" id="firstName" class="w-full p-2 rounded bg-gray-700 border border-gray-600" placeholder="First Name">
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium">Middle Name</label>
+            <input type="text" id="middleName" class="w-full p-2 rounded bg-gray-700 border border-gray-600" placeholder="Middle Name">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 text-sm font-medium">Last Name</label>
+            <input type="text" id="lastName" class="w-full p-2 rounded bg-gray-700 border border-gray-600" placeholder="Last Name">
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium">Suffix</label>
+            <input type="text" id="suffix" class="w-full p-2 rounded bg-gray-700 border border-gray-600" placeholder="Suffix (e.g., Jr., Sr.)">
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-4">
+          <button type="submit" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg shadow">Register</button>
+          <button type="reset" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg shadow">Clear</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Key Registration -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg mt-4">
+      <h2 class="text-2xl font-bold mb-4 text-center">Key Registration</h2>
+      <form id="keyForm" class="space-y-4">
+        <div>
+          <label class="block mb-1 text-sm font-medium">Key ID</label>
+          <input type="text" class="w-full p-2 rounded bg-gray-700 border border-gray-600" placeholder="KEY-001">
+        </div>
+
+        <div>
+          <label class="block mb-1 text-sm font-medium">Laboratory</label>
+          <input type="text" class="w-full p-2 rounded bg-gray-700 border border-gray-600" placeholder="Lab 1 / Lab 2">
+        </div>
+
+        <div class="mt-4 text-center">
+          <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg shadow">Register Key</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/js/pin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="assets/js/faculty-registration.js"></script>
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    let nfcDeviceDetected = false;
+
+    // Function to show SweetAlert at the bottom right
+    function showSweetAlert(message, type) {
+        Swal.fire({
+            position: 'bottom-right',
+            icon: type,
+            title: message,
+            showConfirmButton: false,
+            timer: 0, // The alert will stay until replaced
+            toast: true,
+            background: '#333',
+            color: '#fff',
+            showClass: {
+                popup: 'animate__animated animate__fadeInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutRight'
+            }
+        });
+    }
+
+    // Check if NFC device is initially connected
+    window.onload = function() {
+        if (!nfcDeviceDetected) {
+            showSweetAlert('No NFC Device Detected', 'warning');
+        }
+    };
+
+    // Event listener when NFC device is detected
+    ipcRenderer.on('rfid-detected', (event, uid) => {
+        const rfidInput = document.getElementById('rfidInput');
+        if (rfidInput) {
+            rfidInput.value = uid; // Set RFID value
+        }
+
+        // If NFC is detected, close the "No NFC Device Detected" alert if it's open
+        if (!nfcDeviceDetected) {
+            Swal.close();  // Close the "No NFC Device Detected" alert
+            Swal.fire({
+                position: 'bottom-right',
+                icon: 'success',
+                title: 'NFC Device Detected',
+                showConfirmButton: false,
+                timer: 2000, // The toast will disappear after 2 seconds
+                toast: true,
+                background: '#333',
+                color: '#fff',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutRight'
+                }
+            });
+            nfcDeviceDetected = true;
+        }
+    });
+
+    // Listener when NFC device is disconnected
+    ipcRenderer.on('rfid-disconnected', () => {
+        if (nfcDeviceDetected) {
+            Swal.close(); // Close the "NFC Device Detected" toast
+            showSweetAlert('NFC Device Disconnected. Please plug it again.', 'warning'); // Show the disconnection alert
+            nfcDeviceDetected = false;
+        }
+    });
+
+    // Listener for NFC errors
+    ipcRenderer.on('rfid-error', () => {
+        if (!nfcDeviceDetected) {
+            showSweetAlert('Error with NFC Device', 'error');
+        }
+    });
+</script>
+
+</body>
+</html>

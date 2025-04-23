@@ -1,0 +1,36 @@
+NFC error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+NFC error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+NFC error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
+Reader error: SCardGetStatusChange error: The Smart Card Resource Manager is not running.
+(0x8010001d)
